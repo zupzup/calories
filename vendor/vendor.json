@@ -1,0 +1,49 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "16fWSep+3jUx8wADdbiTxSHjW14=",
+			"path": "github.com/fatih/color",
+			"revision": "7824417a424b65227be8ac9b14d545a7f3e6c3f0",
+			"revisionTime": "2017-02-17T09:50:16Z"
+		},
+		{
+			"checksumSHA1": "g+afVQQVopBLiLB5pFZp/8s6aBs=",
+			"path": "github.com/kardianos/osext",
+			"revision": "c2c54e542fb797ad986b31721e1baedf214ca413",
+			"revisionTime": "2016-08-11T00:15:26Z"
+		},
+		{
+			"checksumSHA1": "plye7pUJSHwBcI5lmVf7vozbRuo=",
+			"path": "github.com/mattn/go-colorable",
+			"revision": "acb9493f2794fd0f820de7a27a217dafbb1b65ea",
+			"revisionTime": "2017-03-04T16:45:43Z"
+		},
+		{
+			"checksumSHA1": "YP5hO9SyMv8G23jEP6CKIqOxDKI=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "9622e0cc9d8f9be434ca605520ff9a16808fee47",
+			"revisionTime": "2017-03-04T15:25:14Z"
+		},
+		{
+			"checksumSHA1": "fM5Ysl+nlW/48x2boH2QZh08q8o=",
+			"path": "github.com/mattn/go-sqlite3",
+			"revision": "eac1dfa2a61ebccaa117538a5bb12044f6700cd0",
+			"revisionTime": "2017-03-05T14:02:06Z"
+		},
+		{
+			"checksumSHA1": "V/quM7+em2ByJbWBLOsEwnY3j/Q=",
+			"path": "github.com/mitchellh/go-homedir",
+			"revision": "b8bc1bf767474819792c23f32d8286a45736f1c6",
+			"revisionTime": "2016-12-03T19:45:07Z"
+		},
+		{
+			"checksumSHA1": "Cr7PCm9qzQ42fegneTyZqJMKUqg=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "e48874b42435b4347fc52bdee0424a52abc974d7",
+			"revisionTime": "2017-03-02T21:05:23Z"
+		}
+	],
+	"rootPath": "github.com/zupzup/calories"
+}

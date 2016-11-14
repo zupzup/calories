@@ -1,0 +1,18 @@
+---
+  language: go
+  sudo: false
+  notifications:
+    email: true
+  go:
+    - 1.7
+    - 1.8
+    - tip 
+  install:
+    - go get github.com/golang/lint/golint
+    - go get github.com/mattn/go-sqlite3
+  script:
+    - go build -v
+    - go vet $(go list ./... | grep -v vendor)
+    - test -z "$(golint ./... | grep -v vendor | tee /dev/stderr)"
+    - test -z "$(gofmt -s -l . | grep -v vendor | tee /dev/stderr)"
+    - go test -short $(go list ./... | grep -v vendor)
