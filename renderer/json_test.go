@@ -21,9 +21,9 @@ func TestJSONError(t *testing.T) {
 
 func TestJSONWeightHistory(t *testing.T) {
 	r := JSONRenderer{}
-	var weights []*model.Weight
+	var weights []model.Weight
 	now := time.Now()
-	weights = append(weights, &model.Weight{
+	weights = append(weights, model.Weight{
 		Created: now,
 		Weight:  85.0,
 	})
@@ -81,7 +81,7 @@ func TestJSONDaysEntries(t *testing.T) {
 	now := time.Now()
 	days := model.Days{}
 	entries := model.Entries{}
-	entries = append(entries, &model.Entry{
+	entries = append(entries, model.Entry{
 		Created:   now,
 		EntryDate: now.Format(util.DateFormat),
 		Calories:  1000,

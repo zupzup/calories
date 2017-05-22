@@ -22,9 +22,9 @@ func TestTerminalError(t *testing.T) {
 
 func TestTerminalWeightHistory(t *testing.T) {
 	r := TerminalRenderer{}
-	var weights []*model.Weight
+	var weights []model.Weight
 	now := time.Now()
-	weights = append(weights, &model.Weight{
+	weights = append(weights, model.Weight{
 		Created: now,
 		Weight:  85.0,
 	})
@@ -81,7 +81,7 @@ func TestTerminalDaysEntries(t *testing.T) {
 	now := time.Now()
 	days := model.Days{}
 	entries := model.Entries{}
-	entries = append(entries, &model.Entry{
+	entries = append(entries, model.Entry{
 		Created:   now,
 		EntryDate: now.Format(util.DateFormat),
 		Calories:  1000,
@@ -107,7 +107,7 @@ func TestTerminalDaysEntriesSurplus(t *testing.T) {
 	now := time.Now()
 	days := model.Days{}
 	entries := model.Entries{}
-	entries = append(entries, &model.Entry{
+	entries = append(entries, model.Entry{
 		Created:   now,
 		EntryDate: now.Format(util.DateFormat),
 		Calories:  3000,

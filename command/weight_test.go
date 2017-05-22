@@ -8,7 +8,7 @@ import (
 )
 
 func TestExecuteWeightNoAdd(t *testing.T) {
-	var weights []*model.Weight
+	var weights []model.Weight
 	exps := make(mock.Expectations)
 	exps.Add("FetchConfig", nil, &model.Config{})
 	exps.Add("FetchWeights", nil, weights)
@@ -27,7 +27,7 @@ func TestExecuteWeightNoAdd(t *testing.T) {
 func TestExecuteWeightBrokenWeights(t *testing.T) {
 	exps := make(mock.Expectations)
 	exps.Add("FetchConfig", nil, &model.Config{})
-	exps.Add("FetchWeights", []*model.Weight{}, errors.New("err"))
+	exps.Add("FetchWeights", []model.Weight{}, errors.New("err"))
 	c := WeightCommand{
 		DataSource: &mock.DataSource{Expectations: exps},
 		Renderer:   &mock.Renderer{},

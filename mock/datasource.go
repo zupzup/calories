@@ -40,9 +40,9 @@ func (d *DataSource) CurrentWeight() (*model.Weight, error) {
 }
 
 // FetchWeights Mock
-func (d *DataSource) FetchWeights() ([]*model.Weight, error) {
+func (d *DataSource) FetchWeights() ([]model.Weight, error) {
 	v, err := d.Expectations.Return("FetchWeights")
-	return v.([]*model.Weight), err
+	return v.([]model.Weight), err
 }
 
 // AddEntry Mock

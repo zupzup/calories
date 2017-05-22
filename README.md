@@ -24,9 +24,17 @@ Features
 Installation
 -------------
 
+Using Go:
+
 ```
 go get github.com/zupzup/calories
 ```
+
+Or with the released [Binaries](https://github.com/zupzup/calories/releases) for
+
+* OS X (32-bit, 64 bit)
+* Windows (32-bit, 64 bit)
+* Linux (32-bit, 64 bit)
 
 Getting Started
 ---------------

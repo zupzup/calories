@@ -30,7 +30,7 @@ func (r *JSONRenderer) Error(err error) (string, error) {
 }
 
 // WeightHistory renders all weights in order and their dates
-func (r *JSONRenderer) WeightHistory(weights []*model.Weight, config *model.Config) (string, error) {
+func (r *JSONRenderer) WeightHistory(weights []model.Weight, config *model.Config) (string, error) {
 	type weightUnit struct {
 		Created   time.Time `json:"created"`
 		Weight    float64   `json:"weight"`
