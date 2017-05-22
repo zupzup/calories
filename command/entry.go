@@ -64,7 +64,7 @@ func clearSingleEntry(ds datasource.DataSource, r renderer.Renderer, yesMode boo
 	if err != nil {
 		return "", err
 	}
-	return r.ClearEntry(formattedDate, entry)
+	return r.ClearEntry(formattedDate, &entry)
 }
 
 // clearAllEntries deletes all entries for a given day, after asking the user

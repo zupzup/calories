@@ -8,7 +8,7 @@ import (
 // the date they have been added to, the used calories and the food which has been consumed.
 // Also, for each entry, the metabolic rates are calculated, for later bookkeeping
 type Entry struct {
-	ID        int       `json:"id"`
+	ID        int       `storm:"id,increment" json:"id"`
 	Created   time.Time `json:"created"`
 	EntryDate string    `json:"entryDate"`
 	Calories  int       `json:"calories"`
@@ -18,4 +18,4 @@ type Entry struct {
 }
 
 // Entries is a custom slice type for a list of entries
-type Entries []*Entry
+type Entries []Entry

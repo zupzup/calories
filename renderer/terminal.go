@@ -17,7 +17,7 @@ func (r *TerminalRenderer) Error(err error) (string, error) {
 }
 
 // WeightHistory renders all weights in order and their dates
-func (r *TerminalRenderer) WeightHistory(weights []*model.Weight, config *model.Config) (string, error) {
+func (r *TerminalRenderer) WeightHistory(weights []model.Weight, config *model.Config) (string, error) {
 	var res string
 	for _, weight := range weights {
 		res += fmt.Sprintf("\t%s: %s\n", weight.Created.Format(util.DateFormat), util.WeightUnit(config.UnitSystem, weight.Weight))

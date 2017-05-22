@@ -7,7 +7,7 @@ import (
 // Config represents the configuration and is unique and holds data relevant for calculating the
 // metabolic rate of the user
 type Config struct {
-	ID         int       `json:"id"`
+	ID         int       `storm:"id,increment" json:"id"`
 	Height     float64   `json:"height"`
 	Activity   float64   `json:"activity"`
 	Birthday   time.Time `json:"birthday"`

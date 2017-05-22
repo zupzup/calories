@@ -4,12 +4,10 @@
   notifications:
     email: true
   go:
-    - 1.7
     - 1.8
     - tip 
   install:
     - go get github.com/golang/lint/golint
-    - go get github.com/mattn/go-sqlite3
   script:
     - go build -v
     - go vet $(go list ./... | grep -v vendor)

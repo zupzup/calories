@@ -40,7 +40,7 @@ func TestExecuteEntriesClearZeroEntries(t *testing.T) {
 
 func TestExecuteEntriesClearTooFewEntries(t *testing.T) {
 	exps := make(mock.Expectations)
-	exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+	exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	c := ClearEntriesCommand{
 		DataSource: &mock.DataSource{Expectations: exps},
 		Renderer:   &mock.Renderer{},
@@ -57,7 +57,7 @@ func TestExecuteEntriesClearTooFewEntries(t *testing.T) {
 
 func TestExecuteEntriesClearZeroPosition(t *testing.T) {
 	exps := make(mock.Expectations)
-	exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+	exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	c := ClearEntriesCommand{
 		DataSource: &mock.DataSource{Expectations: exps},
 		Renderer:   &mock.Renderer{},
@@ -74,7 +74,7 @@ func TestExecuteEntriesClearZeroPosition(t *testing.T) {
 
 func TestExecuteEntriesClearSuccess(t *testing.T) {
 	exps := make(mock.Expectations)
-	exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+	exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	exps.Add("RemoveEntry", nil, nil)
 	c := ClearEntriesCommand{
 		DataSource: &mock.DataSource{Expectations: exps},

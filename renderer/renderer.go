@@ -8,7 +8,7 @@ import (
 // Renderer is the interface for rendering any output
 type Renderer interface {
 	Error(err error) (string, error)
-	WeightHistory(weights []*model.Weight, config *model.Config) (string, error)
+	WeightHistory(weights []model.Weight, config *model.Config) (string, error)
 	AddWeight(weight float64, config *model.Config) (string, error)
 	Config(config *model.Config, weight *model.Weight, amr, bmr float64, age int) (string, error)
 	Days(days model.Days, from, to time.Time) (string, error)

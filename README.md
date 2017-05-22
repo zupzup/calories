@@ -24,9 +24,17 @@ Features
 Installation
 -------------
 
+Using Go:
+
 ```
 go get github.com/zupzup/calories
 ```
+
+Or with the released [Binaries](https://github.com/zupzup/calories/releases) for
+
+* OS X (32-bit, 64 bit)
+* Windows (32-bit, 64 bit)
+* Linux (32-bit, 64 bit)
 
 Getting Started
 ---------------
@@ -45,9 +53,9 @@ calories config --weight=88.0 --height=189.0 --activity=1.375 --birthday=02.09.1
 calories config --w=226.0 --h=72.8 --a=1.55 --b=02.09.1986 --g=male --u=imperial
 ```
 
-Expect for **Activity**, these parameters should be pretty self-explanatory. You can use both the metric or the imperial system, but you need to specify the one you are using in the configuration.
+Except for **Activity**, the parameters should be pretty self-explanatory. You can use both the metric or the imperial system, but you need to specify the one you are using in the configuration.
 
-The Activity Setting depends on how much you exercise and needs to be set independent of the unit system based on this table:
+The Activity Setting depends on how much you exercise and needs to be set independently of the unit system based on this table:
 
 | Amount of Exercise                    | Activity |
 |---------------------------------------|----------|
@@ -86,8 +94,8 @@ calories <command> -help
 // Add an apple with 100 calories
 calories add 100 Apple
 
-// Add strawberries with cream 
-calories add 300 "strawberries with cream"
+// Add dates and cashews 
+calories add 300 "dates and cashews"
 
 // Add a Burger with 1000 calories 
 calories add 1000 Burger

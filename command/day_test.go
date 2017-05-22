@@ -10,7 +10,7 @@ import (
 func TestExecuteDayWeekSuccessEmpty(t *testing.T) {
 	exps := make(mock.Expectations)
 	for i := 0; i <= 31; i++ {
-		exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+		exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	}
 	c := DayCommand{
 		DataSource: &mock.DataSource{Expectations: exps},
@@ -45,7 +45,7 @@ func TestExecuteDayWeekFetchFail(t *testing.T) {
 func TestExecuteDayWeekSuccessEntries(t *testing.T) {
 	exps := make(mock.Expectations)
 	for i := 0; i <= 31; i++ {
-		exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+		exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	}
 	c := DayCommand{
 		DataSource: &mock.DataSource{Expectations: exps},
@@ -62,7 +62,7 @@ func TestExecuteDayWeekSuccessEntries(t *testing.T) {
 func TestExecuteDayMonthSuccess(t *testing.T) {
 	exps := make(mock.Expectations)
 	for i := 0; i <= 31; i++ {
-		exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+		exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	}
 	c := DayCommand{
 		DataSource: &mock.DataSource{Expectations: exps},
@@ -79,7 +79,7 @@ func TestExecuteDayMonthSuccess(t *testing.T) {
 
 func TestExecuteDayDateSuccess(t *testing.T) {
 	exps := make(mock.Expectations)
-	exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+	exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	c := DayCommand{
 		DataSource:  &mock.DataSource{Expectations: exps},
 		Renderer:    &mock.Renderer{},
@@ -97,7 +97,7 @@ func TestExecuteDayDateSuccess(t *testing.T) {
 
 func TestExecuteDayFalseDate(t *testing.T) {
 	exps := make(mock.Expectations)
-	exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+	exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	c := DayCommand{
 		DataSource:  &mock.DataSource{Expectations: exps},
 		Renderer:    &mock.Renderer{},
@@ -116,7 +116,7 @@ func TestExecuteDayFalseDate(t *testing.T) {
 
 func TestExecuteDayNoDateSuccess(t *testing.T) {
 	exps := make(mock.Expectations)
-	exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+	exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	c := DayCommand{
 		DataSource:  &mock.DataSource{Expectations: exps},
 		Renderer:    &mock.Renderer{},
@@ -135,7 +135,7 @@ func TestExecuteDayNoDateSuccess(t *testing.T) {
 func TestExecuteDayHistorySuccess(t *testing.T) {
 	exps := make(mock.Expectations)
 	for i := 0; i <= 6; i++ {
-		exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+		exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	}
 	c := DayCommand{
 		DataSource: &mock.DataSource{Expectations: exps},
@@ -154,7 +154,7 @@ func TestExecuteDayHistorySuccess(t *testing.T) {
 func TestExecuteDayHistoryMinusSuccess(t *testing.T) {
 	exps := make(mock.Expectations)
 	for i := 0; i <= 6; i++ {
-		exps.Add("FetchEntries", nil, model.Entries{&model.Entry{}})
+		exps.Add("FetchEntries", nil, model.Entries{model.Entry{}})
 	}
 	c := DayCommand{
 		DataSource: &mock.DataSource{Expectations: exps},

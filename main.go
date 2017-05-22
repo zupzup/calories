@@ -90,7 +90,7 @@ func main() {
 	flag.Parse()
 	var r renderer.Renderer
 	r = &renderer.TerminalRenderer{}
-	ds := &datasource.SQLiteDataSource{}
+	ds := &datasource.BoltDataSource{}
 	folder, err := osext.ExecutableFolder()
 	if err != nil {
 		fatalError(r, fmt.Errorf("error reading folder containing the calories binary, %v", err))

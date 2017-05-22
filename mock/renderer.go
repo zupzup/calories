@@ -17,7 +17,7 @@ func (r *Renderer) Error(err error) (string, error) {
 }
 
 // WeightHistory Mock
-func (r *Renderer) WeightHistory(weights []*model.Weight, config *model.Config) (string, error) {
+func (r *Renderer) WeightHistory(weights []model.Weight, config *model.Config) (string, error) {
 	return r.Expected, r.Err
 }
 
