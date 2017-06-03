@@ -11,7 +11,7 @@ import (
 	"github.com/zupzup/calories/renderer"
 	"io/ioutil"
 	"os"
-	"path"
+	"path/filepath"
 	"strings"
 )
 
@@ -95,7 +95,7 @@ func main() {
 	if err != nil {
 		fatalError(r, fmt.Errorf("error reading folder containing the calories binary, %v", err))
 	}
-	var configFile = path.Join(folder, configFile)
+	var configFile = filepath.Join(folder, configFile)
 	config, err := ioutil.ReadFile(configFile)
 	if err != nil {
 		asciilogo()
@@ -167,13 +167,13 @@ func handleNoSubCommand(commandsFlag bool, outputFlag string, ds datasource.Data
 // createConfig asks the user which database file to use and writes the answer into
 // the .caloriesconf configuration file
 func createConfig(config []byte, folder, defaultDBFile string) (string, error) {
-	defaultConfig := path.Join(folder, defaultDBFile)
+	defaultConfig := filepath.Join(folder, defaultDBFile)
 	homedir, err := homedir.Dir()
 	if err != nil {
 		fmt.Println("could not find home directory, using binary directory instead")
 	}
 	if homedir != "" {
-		defaultConfig = path.Join(homedir, defaultDBFile)
+		defaultConfig = filepath.Join(homedir, defaultDBFile)
 	}
 	configToSet := defaultConfig
 	prompt := bufio.NewReader(os.Stdin)
@@ -189,7 +189,8 @@ func createConfig(config []byte, folder, defaultDBFile string) (string, error) {
 		}
 		break
 	}
-	err = ioutil.WriteFile(configFile, []byte(configToSet), os.ModePerm)
+	configFilePath := filepath.Join(folder, configFile)
+	err = ioutil.WriteFile(configFilePath, []byte(configToSet), os.ModePerm)
 	if err != nil {
 		return "", fmt.Errorf("error writing config file at %s, %v", configFile, err)
 	}
