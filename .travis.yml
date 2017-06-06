@@ -8,6 +8,8 @@
     - tip 
   install:
     - go get github.com/golang/lint/golint
+    - go get github.com/kardianos/govendor
+    - govendor sync
   script:
     - go build -v
     - go vet $(go list ./... | grep -v vendor)

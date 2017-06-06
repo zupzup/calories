@@ -3,6 +3,7 @@ calories
 
 [![Build Status](https://travis-ci.org/zupzup/calories.svg?branch=master)](https://travis-ci.org/zupzup/calories)
 [![Go Report Card](https://goreportcard.com/badge/github.com/zupzup/calories)](https://goreportcard.com/report/github.com/zupzup/calories)
+[![GoDoc](https://godoc.org/github.com/zupzup/calories?status.svg)](http://godoc.org/github.com/zupzup/calories)
 
 ![Screenshot](logo.png)
 
