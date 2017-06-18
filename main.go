@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
+	"github.com/fatih/color"
 	"github.com/kardianos/osext"
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/zupzup/calories/command"
@@ -126,13 +127,13 @@ func main() {
 		if err != nil {
 			fatalError(r, err)
 		}
-		fmt.Println(res)
+		fmt.Fprintln(color.Output, res)
 	} else {
 		res, err := handleNoSubCommand(commandsFlag, outputFlag, ds, r, os.Args)
 		if err != nil {
 			fatalError(r, err)
 		}
-		fmt.Println(res)
+		fmt.Fprintln(color.Output, res)
 	}
 }
 
