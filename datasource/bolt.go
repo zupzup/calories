@@ -170,6 +170,7 @@ func (ds *BoltDataSource) RemoveEntry(entryDate string, id int) error {
 // Import imports the given data to the database, overwriting the previous
 // data
 func (ds *BoltDataSource) Import(data *model.ImpEx) error {
+	var zeroID int
 	err := ds.SetConfig(data.Config)
 	if err != nil {
 		return fmt.Errorf("could not replace config, %v", err)
@@ -179,6 +180,7 @@ func (ds *BoltDataSource) Import(data *model.ImpEx) error {
 		return fmt.Errorf("could not remove weights, %v", err)
 	}
 	for _, weight := range data.Weights {
+		weight.ID = zeroID
 		err = ds.DB.Save(&weight)
 		if err != nil {
 			return fmt.Errorf("could not insert/update weight with id %d", weight.ID)
@@ -189,6 +191,7 @@ func (ds *BoltDataSource) Import(data *model.ImpEx) error {
 		return fmt.Errorf("could not remove entries, %v", err)
 	}
 	for _, entry := range data.Entries {
+		entry.ID = zeroID
 		err = ds.DB.Save(&entry)
 		if err != nil {
 			return fmt.Errorf("could not insert/update entry with id %d", entry.ID)
