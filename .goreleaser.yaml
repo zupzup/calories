@@ -7,6 +7,9 @@ builds:
       - linux
       - windows
       - darwin
+    ignore:
+      - goos: windows
+        goarch: arm
 archives:
   - replacements:
       darwin: Darwin
