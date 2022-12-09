@@ -32,6 +32,28 @@ func (ds *BoltDataSource) SetConfig(c *model.Config) error {
 	if c.UnitSystem != "metric" && c.UnitSystem != "imperial" {
 		return fmt.Errorf("unit system needs to be either metric or imperial: %s", c.UnitSystem)
 	}
+	height := c.Height
+	if c.UnitSystem == util.Imperial {
+		height = util.ToCm(height)
+	}
+	config := model.Config{
+		Height:     height,
+		Activity:   c.Activity,
+		Birthday:   c.Birthday,
+		Gender:     c.Gender,
+		UnitSystem: c.UnitSystem,
+	}
+	err := ds.DB.Save(&config)
+	return err
+}
+
+// SetConfigFromImport overrides the current config with the given values
+// by deleting the old config and adding a new one
+func (ds *BoltDataSource) SetConfigFromImport(c *model.Config) error {
+	ds.DB.Drop(&model.Config{})
+	if c.UnitSystem != "metric" && c.UnitSystem != "imperial" {
+		return fmt.Errorf("unit system needs to be either metric or imperial: %s", c.UnitSystem)
+	}
 	config := model.Config{
 		Height:     c.Height,
 		Activity:   c.Activity,
@@ -168,7 +190,7 @@ func (ds *BoltDataSource) RemoveEntry(entryDate string, id int) error {
 // data
 func (ds *BoltDataSource) Import(data *model.ImpEx) error {
 	var zeroID int
-	err := ds.SetConfig(data.Config)
+	err := ds.SetConfigFromImport(data.Config)
 	if err != nil {
 		return fmt.Errorf("could not replace config, %v", err)
 	}

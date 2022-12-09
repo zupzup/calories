@@ -8,6 +8,7 @@ import (
 type DataSource interface {
 	Setup(connection string) (func() error, error)
 	SetConfig(*model.Config) error
+	SetConfigFromImport(*model.Config) error
 	FetchConfig() (*model.Config, error)
 	AddWeight(weight float64) error
 	CurrentWeight() (*model.Weight, error)
