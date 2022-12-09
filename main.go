@@ -4,16 +4,17 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
+	"io/ioutil"
+	"os"
+	"path/filepath"
+	"strings"
+
 	"github.com/fatih/color"
 	"github.com/kardianos/osext"
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/zupzup/calories/command"
 	"github.com/zupzup/calories/datasource"
 	"github.com/zupzup/calories/renderer"
-	"io/ioutil"
-	"os"
-	"path/filepath"
-	"strings"
 )
 
 // VERSION indicates the version of the binary

@@ -2,11 +2,12 @@ package datasource
 
 import (
 	"fmt"
+	"time"
+
 	"github.com/asdine/storm"
 	"github.com/asdine/storm/q"
 	"github.com/zupzup/calories/model"
 	"github.com/zupzup/calories/util"
-	"time"
 )
 
 // BoltDataSource is an implementation of the DataSource interface for boltdb
@@ -31,12 +32,8 @@ func (ds *BoltDataSource) SetConfig(c *model.Config) error {
 	if c.UnitSystem != "metric" && c.UnitSystem != "imperial" {
 		return fmt.Errorf("unit system needs to be either metric or imperial: %s", c.UnitSystem)
 	}
-	height := c.Height
-	if c.UnitSystem == util.Imperial {
-		height = util.ToCm(height)
-	}
 	config := model.Config{
-		Height:     height,
+		Height:     c.Height,
 		Activity:   c.Activity,
 		Birthday:   c.Birthday,
 		Gender:     c.Gender,
