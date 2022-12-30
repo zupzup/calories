@@ -2,10 +2,11 @@ package renderer
 
 import (
 	"fmt"
+	"time"
+
 	"github.com/fatih/color"
 	"github.com/zupzup/calories/model"
 	"github.com/zupzup/calories/util"
-	"time"
 )
 
 // TerminalRenderer is the renderer for the CLI
@@ -27,7 +28,7 @@ func (r *TerminalRenderer) WeightHistory(weights []model.Weight, config *model.C
 
 // AddWeight renders a success message and the added weight
 func (r *TerminalRenderer) AddWeight(weight float64, config *model.Config) (string, error) {
-	return fmt.Sprintf("Added weight: %s \n", util.WeightUnit(config.UnitSystem, weight)), nil
+	return fmt.Sprintf("Set weight: %s \n", util.WeightUnit(config.UnitSystem, weight)), nil
 }
 
 // Config prints the given configuration with weight, amr and bmr

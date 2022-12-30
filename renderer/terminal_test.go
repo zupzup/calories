@@ -3,11 +3,12 @@ package renderer
 import (
 	"errors"
 	"fmt"
+	"testing"
+	"time"
+
 	"github.com/fatih/color"
 	"github.com/zupzup/calories/model"
 	"github.com/zupzup/calories/util"
-	"testing"
-	"time"
 )
 
 func TestTerminalError(t *testing.T) {
@@ -40,7 +41,7 @@ func TestTerminalWeightHistory(t *testing.T) {
 func TestTerminalAddWeight(t *testing.T) {
 	r := TerminalRenderer{}
 	res, err := r.AddWeight(85.0, &model.Config{})
-	expected := "Added weight: 85.0 kg \n"
+	expected := "Set weight: 85.0 kg \n"
 	if res != expected || err != nil {
 		t.Errorf("Error, actual: %v expected: %v", res, expected)
 		return

@@ -3,9 +3,10 @@ package renderer
 import (
 	"encoding/json"
 	"fmt"
+	"time"
+
 	"github.com/zupzup/calories/model"
 	"github.com/zupzup/calories/util"
-	"time"
 )
 
 type success struct {
@@ -59,7 +60,7 @@ func (r *JSONRenderer) WeightHistory(weights []model.Weight, config *model.Confi
 func (r *JSONRenderer) AddWeight(weight float64, config *model.Config) (string, error) {
 	res := success{
 		Success: true,
-		Message: fmt.Sprintf("Added weight: %s", util.WeightUnit(config.UnitSystem, weight)),
+		Message: fmt.Sprintf("Set weight: %s", util.WeightUnit(config.UnitSystem, weight)),
 	}
 	b, err := json.Marshal(res)
 	if err != nil {

@@ -3,10 +3,11 @@ package renderer
 import (
 	"errors"
 	"fmt"
-	"github.com/zupzup/calories/model"
-	"github.com/zupzup/calories/util"
 	"testing"
 	"time"
+
+	"github.com/zupzup/calories/model"
+	"github.com/zupzup/calories/util"
 )
 
 func TestJSONError(t *testing.T) {
@@ -56,7 +57,7 @@ func TestJSONConfig(t *testing.T) {
 func TestJSONAddWeight(t *testing.T) {
 	r := JSONRenderer{}
 	res, err := r.AddWeight(85.0, &model.Config{})
-	expectedString := "Added weight: 85.0 kg"
+	expectedString := "Set weight: 85.0 kg"
 	expected := fmt.Sprintf("{\"success\":true,\"message\":\"%s\"}", expectedString)
 	if res != expected || err != nil {
 		t.Errorf("Error, actual: %v expected: %v", res, expected)
